@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Prime</title>
+    <style>
+        body{
+            text-align: center;
+            margin-top: 200px;
+            background-color: rgb(104, 102, 102);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input id="inputnum" type="number" placeholder="Enter Your Number Here">
+        <button id="btn">Check</button>
+    </div>
+    <h2 id="result"></h2>
+</body>
+<script>
+    let result = document.getElementById("result");
+    let inputnum = document.getElementById("inputnum");
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click" ,showresult);
+
+    function showresult(){
+
+        let num = parseInt(inputnum.value);
+        if(num > 1){
+            let flag = true;
+            for(let i = 2; i < num; i++){
+                if(num % i === 0){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag == true){
+                result.textContent = `${num} is a prime number`;
+            } else {
+                result.textContent = `${num} is not a prime number`;
+            }
+        } else {
+            result.textContent = `${num} is not a prime number`;
+        }
+    }
+</script>
+</html>
