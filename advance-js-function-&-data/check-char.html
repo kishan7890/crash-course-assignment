@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        div{
+            width: 60%;
+            margin: auto;
+            background-color: rgb(107, 105, 105);
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Enter Your char To See whether your char is in small case or not</h1>
+        <input id="inputchar" type="text" placeholder="Enter Your Char Here">
+        <button id="btn">Enter</button>
+        <div>
+            <h1>Your char is in :</h1>
+            <h2 id="result"></h2>
+        </div>
+    </div>
+</body>
+<script>
+    let result = document.getElementById("result");
+    let inputchar = document.getElementById("inputchar");
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click" ,showresult);
+
+    function showresult(){
+        if(inputchar.value == inputchar.value.toLowerCase()){
+            result.innerText= "Small Case";
+        }else{
+            result.innerText= "Upper Case";
+        }
+    }
+</script>
+</html>
