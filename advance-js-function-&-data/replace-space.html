@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        div{
+            width: 60%;
+            margin: auto;
+            background-color: rgb(107, 105, 105);
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Enter Your statement To replace spaces into "-"</h1>
+        <input id="statement" type="text" placeholder="Enter Your statement Here">
+        <button id="btn">Enter</button>
+        <div>
+            <h1>Your Replaced statement  :</h1>
+            <h2 id="result"></h2>
+        </div>
+    </div>
+</body>
+<script>
+    let result = document.getElementById("result");
+    let statement = document.getElementById("statement");
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click" ,showresult);
+
+    function showresult(){
+        let st = statement.value;
+        let replaced = replacespace(st);
+        result.innerText = replaced;
+    }
+
+    function replacespace(statement){
+        return statement.replace(/ /g,"-")
+    }
+</script>
+</html>
