@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        div{
+            width: 60%;
+            margin: auto;
+            background-color: rgb(107, 105, 105);
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Enter Your Number To See Prime Number</h1>
+        <input id="inputnum" type="number" placeholder="Enter Your Number Here">
+        <button id="btn">Enter</button>
+        <div>
+            <h1>Your Prime numbers are :</h1>
+            <h2 id="result"></h2>
+        </div>
+    </div>
+    
+</body>
+<script>
+    let result = document.getElementById("result");
+    let inputnum = document.getElementById("inputnum");
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click" ,showresult);
+
+    function showresult(){
+        let bag = "";
+        for(let i=2;i<=inputnum.value; i++){
+            if(isPrime(i)){
+                bag+=i + " , ";
+            }
+        }
+        result.innerText=bag;
+    }
+
+    function isPrime(num){
+        if(num>1){
+            let flag = true;
+            for(let i = 2; i < num; i++){
+                if(num % i === 0){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag == true){
+                return num;
+            }
+        }
+    }
+</script>
+</html>
