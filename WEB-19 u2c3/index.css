@@ -1,0 +1,22 @@
+/* Fill CSS here */
+h1{
+    text-align: center;
+}
+
+div{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+th{
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid;
+}
+td{
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid;
+    background-color: blanchedalmond; 
+}
